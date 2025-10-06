@@ -3,18 +3,18 @@ exports.has = has
 exports.remove = remove
 exports.swap = swap
 
-function add (list, item) {
+function add(list, item) {
   if (has(list, item)) return item
   item._index = list.length
   list.push(item)
   return item
 }
 
-function has (list, item) {
+function has(list, item) {
   return item._index < list.length && list[item._index] === item
 }
 
-function remove (list, item) {
+function remove(list, item) {
   if (!has(list, item)) return null
 
   var last = list.pop()
@@ -26,7 +26,7 @@ function remove (list, item) {
   return item
 }
 
-function swap (list, a, b) {
+function swap(list, a, b) {
   if (!has(list, a) || !has(list, b)) return
   var tmp = a._index
   a._index = b._index

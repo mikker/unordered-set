@@ -3,8 +3,8 @@ var set = require('./')
 
 tape('add', function (t) {
   var list = []
-  var a = {hello: 'world'}
-  var b = {hello: 'verden'}
+  var a = { hello: 'world' }
+  var b = { hello: 'verden' }
 
   set.add(list, a)
   set.add(list, b)
@@ -15,8 +15,8 @@ tape('add', function (t) {
 
 tape('add twice', function (t) {
   var list = []
-  var a = {hello: 'world'}
-  var b = {hello: 'verden'}
+  var a = { hello: 'world' }
+  var b = { hello: 'verden' }
 
   set.add(list, a)
   set.add(list, b)
@@ -28,8 +28,8 @@ tape('add twice', function (t) {
 
 tape('remove', function (t) {
   var list = []
-  var a = {hello: 'world'}
-  var b = {hello: 'verden'}
+  var a = { hello: 'world' }
+  var b = { hello: 'verden' }
 
   set.add(list, a)
   set.add(list, b)
@@ -41,8 +41,8 @@ tape('remove', function (t) {
 
 tape('remove twice', function (t) {
   var list = []
-  var a = {hello: 'world'}
-  var b = {hello: 'verden'}
+  var a = { hello: 'world' }
+  var b = { hello: 'verden' }
 
   set.add(list, a)
   set.add(list, b)
@@ -55,8 +55,8 @@ tape('remove twice', function (t) {
 
 tape('remove all', function (t) {
   var list = []
-  var a = {hello: 'world'}
-  var b = {hello: 'verden'}
+  var a = { hello: 'world' }
+  var b = { hello: 'verden' }
 
   set.add(list, a)
   set.add(list, b)
@@ -69,8 +69,8 @@ tape('remove all', function (t) {
 
 tape('re-add', function (t) {
   var list = []
-  var a = {hello: 'world'}
-  var b = {hello: 'verden'}
+  var a = { hello: 'world' }
+  var b = { hello: 'verden' }
 
   set.add(list, a)
   set.add(list, b)
@@ -85,8 +85,8 @@ tape('re-add', function (t) {
 
 tape('has', function (t) {
   var list = []
-  var a = {hello: 'world'}
-  var b = {hello: 'verden'}
+  var a = { hello: 'world' }
+  var b = { hello: 'verden' }
 
   set.add(list, a)
   set.add(list, b)
@@ -99,8 +99,8 @@ tape('has', function (t) {
 
 tape('swap', function (t) {
   var list = []
-  var a = {hello: 'world'}
-  var b = {hello: 'verden'}
+  var a = { hello: 'world' }
+  var b = { hello: 'verden' }
 
   set.add(list, a)
   set.add(list, b)
@@ -116,7 +116,7 @@ tape('swap', function (t) {
 
 tape('swap same', function (t) {
   var list = []
-  var a = {hello: 'world'}
+  var a = { hello: 'world' }
 
   set.add(list, a)
 

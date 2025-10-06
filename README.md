@@ -10,12 +10,12 @@ npm install unordered-set
 
 ## Usage
 
-``` js
+```js
 var set = require('unordered-set')
 var list = []
 
-var a = {hello: 'world'}
-var b = {hej: 'verden'}
+var a = { hello: 'world' }
+var b = { hej: 'verden' }
 
 set.add(list, a)
 set.add(list, b)

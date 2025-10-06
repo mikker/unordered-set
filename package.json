@@ -3,13 +3,15 @@
   "version": "2.0.1",
   "description": "A couple of functions that make it easy to maintain an unordered set as an array in an efficient way",
   "main": "index.js",
-  "dependencies": {},
   "devDependencies": {
-    "standard": "^6.0.4",
+    "prettier": "^3.6.2",
+    "prettier-config-holepunch": "^1.0.0",
     "tape": "^4.4.0"
   },
   "scripts": {
-    "test": "standard && tape test.js"
+    "format": "prettier --write .",
+    "lint": "prettier --check .",
+    "test": "tape test.js"
   },
   "repository": {
     "type": "git",

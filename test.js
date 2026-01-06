@@ -1,76 +1,71 @@
-var tape = require('tape')
-var set = require('./')
+const test = require('brittle')
+const set = require('./')
 
-tape('add', function (t) {
-  var list = []
-  var a = { hello: 'world' }
-  var b = { hello: 'verden' }
-
-  set.add(list, a)
-  set.add(list, b)
-
-  t.same(list, [a, b])
-  t.end()
-})
-
-tape('add twice', function (t) {
-  var list = []
-  var a = { hello: 'world' }
-  var b = { hello: 'verden' }
+test('add', function (t) {
+  const list = []
+  const a = { hello: 'world' }
+  const b = { hello: 'verden' }
 
   set.add(list, a)
   set.add(list, b)
-  set.add(list, b)
 
-  t.same(list, [a, b])
-  t.end()
+  t.alike(list, [a, b])
 })
 
-tape('remove', function (t) {
-  var list = []
-  var a = { hello: 'world' }
-  var b = { hello: 'verden' }
+test('add twice', function (t) {
+  const list = []
+  const a = { hello: 'world' }
+  const b = { hello: 'verden' }
+
+  set.add(list, a)
+  set.add(list, b)
+  set.add(list, b)
+
+  t.alike(list, [a, b])
+})
+
+test('remove', function (t) {
+  const list = []
+  const a = { hello: 'world' }
+  const b = { hello: 'verden' }
 
   set.add(list, a)
   set.add(list, b)
   set.remove(list, a)
 
-  t.same(list, [b])
-  t.end()
+  t.alike(list, [b])
 })
 
-tape('remove twice', function (t) {
-  var list = []
-  var a = { hello: 'world' }
-  var b = { hello: 'verden' }
+test('remove twice', function (t) {
+  const list = []
+  const a = { hello: 'world' }
+  const b = { hello: 'verden' }
 
   set.add(list, a)
   set.add(list, b)
   set.remove(list, a)
   set.remove(list, a)
 
-  t.same(list, [b])
-  t.end()
+  t.alike(list, [b])
 })
 
-tape('remove all', function (t) {
-  var list = []
-  var a = { hello: 'world' }
-  var b = { hello: 'verden' }
+test('remove all', function (t) {
+  const list = []
+  const a = { hello: 'world' }
+  const b = { hello: 'verden' }
 
   set.add(list, a)
   set.add(list, b)
   set.remove(list, a)
   set.remove(list, b)
 
-  t.same(list, [])
-  t.end()
+  t.alike(list, [])
 })
 
-tape('re-add', function (t) {
-  var list = []
-  var a = { hello: 'world' }
-  var b = { hello: 'verden' }
+test('re-add', function (t) {
+  const list = []
+  const a = { hello: 'world' }
+  const b = { hello: 'verden' }
 
   set.add(list, a)
   set.add(list, b)
@@ -79,14 +74,13 @@ tape('re-add', function (t) {
   set.add(list, b)
   set.add(list, a)
 
-  t.same(list, [b, a])
-  t.end()
+  t.alike(list, [b, a])
 })
 
-tape('has', function (t) {
-  var list = []
-  var a = { hello: 'world' }
-  var b = { hello: 'verden' }
+test('has', function (t) {
+  const list = []
+  const a = { hello: 'world' }
+  const b = { hello: 'verden' }
 
   set.add(list, a)
   set.add(list, b)
@@ -94,33 +88,29 @@ tape('has', function (t) {
 
   t.ok(!set.has(list, a))
   t.ok(set.has(list, b))
-  t.end()
 })
 
-tape('swap', function (t) {
-  var list = []
-  var a = { hello: 'world' }
-  var b = { hello: 'verden' }
+test('swap', function (t) {
+  const list = []
+  const a = { hello: 'world' }
+  const b = { hello: 'verden' }
 
   set.add(list, a)
   set.add(list, b)
 
   set.swap(list, a, b)
-  t.same(list, [b, a])
+  t.alike(list, [b, a])
 
   set.swap(list, a, b)
-  t.same(list, [a, b])
-
-  t.end()
+  t.alike(list, [a, b])
 })
 
-tape('swap same', function (t) {
-  var list = []
-  var a = { hello: 'world' }
+test('swap same', function (t) {
+  const list = []
+  const a = { hello: 'world' }
 
   set.add(list, a)
 
   set.swap(list, a, a)
-  t.same(list, [a])
-  t.end()
+  t.alike(list, [a])
 })

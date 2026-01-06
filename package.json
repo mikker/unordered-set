@@ -4,13 +4,17 @@
   "description": "A couple of functions that make it easy to maintain an unordered set as an array in an efficient way",
   "main": "index.js",
   "devDependencies": {
+    "brittle": "^3.0.0",
+    "lunte": "^1.0.0",
     "prettier": "^3.6.2",
-    "prettier-config-holepunch": "^2.0.0",
-    "tape": "^4.4.0"
+    "prettier-config-holepunch": "^2.0.0"
   },
   "scripts": {
     "format": "prettier --write .",
-    "test": "prettier --check . && tape test.js"
+    "lint": "prettier --check . && lunte",
+    "test": "npm run test:node && npm run test:bare",
+    "test:node": "brittle-node test.js",
+    "test:bare": "brittle-bare test.js"
   },
   "repository": {
     "type": "git",
